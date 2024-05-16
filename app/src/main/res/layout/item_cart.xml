@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/cartItemImageView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_margin="8dp"
+        android:src="@drawable/ic_launcher_background" />
+
+    <TextView
+        android:id="@+id/cartItemNameTextView"
+        android:layout_width="108dp"
+        android:layout_height="26dp"
+        android:layout_marginTop="8dp"
+        android:layout_toEndOf="@id/cartItemImageView"
+        android:text="Name"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/cartItemPriceTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/cartItemNameTextView"
+        android:layout_toEndOf="@id/cartItemImageView"
+        android:text="Price"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/cartItemTotalPriceTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/cartItemPriceTextView"
+        android:layout_toEndOf="@id/cartItemImageView"
+        android:text="Total Price"
+        android:textSize="12sp" />
+
+    <Button
+        android:id="@+id/cartItemRemoveButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/cartItemPriceTextView"
+        android:layout_marginStart="8dp"
+        android:layout_toEndOf="@id/cartItemTotalPriceTextView"
+        android:background="@drawable/buttons"
+        android:text="-"
+        android:textColor="@color/light_green" />
+
+    <Button
+        android:id="@+id/cartItemIncreaseButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/cartItemPriceTextView"
+        android:layout_marginStart="8dp"
+        android:layout_toEndOf="@id/cartItemQuantityTextView"
+        android:background="@drawable/buttons"
+        android:text="+"
+        android:textColor="@color/light_green" />
+
+    <TextView
+        android:id="@+id/cartItemQuantityTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/cartItemPriceTextView"
+        android:layout_marginStart="8dp"
+        android:layout_centerVertical="true"
+        android:layout_toEndOf="@id/cartItemRemoveButton"
+        android:text="1" />
+
+</RelativeLayout>

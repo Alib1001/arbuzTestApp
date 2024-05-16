@@ -3,15 +3,18 @@ package com.app.arbuztestapp
 import android.os.Bundle
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.app.arbuztestapp.databinding.ActivityMainBinding
+import com.app.arbuztestapp.ui.cart.CartViewModel
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+    private lateinit var cartViewModel: CartViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,5 +32,12 @@ class MainActivity : AppCompatActivity() {
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+
+        cartViewModel = ViewModelProvider(this).get(CartViewModel::class.java)
+
+        cartViewModel.allCartItems.observe(this, { cartItems ->
+            val badge = navView.getOrCreateBadge(R.id.navigation_cart)
+            badge.number = cartItems.size
+        })
     }
 }

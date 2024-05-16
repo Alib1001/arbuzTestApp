@@ -1,7 +1,6 @@
 package com.app.arbuztestapp.Adapters
 
 import android.content.Context
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,7 +8,6 @@ import android.widget.BaseAdapter
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.lifecycle.lifecycleScope
 import com.app.arbuztestapp.Database.CartItemEntity
 import com.app.arbuztestapp.Database.ProductDatabase
 import com.app.arbuztestapp.R

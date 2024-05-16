@@ -1,4 +1,5 @@
 package com.app.arbuztestapp.ui.cart
+
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -31,7 +32,7 @@ class CartFragment : Fragment(), CartItemAdapter.OnCartItemChangeListener {
         cartViewModel = ViewModelProvider(this).get(CartViewModel::class.java)
         productDatabase = ProductDatabase.getDatabase(requireContext())
 
-        cartItemAdapter = CartItemAdapter(requireContext(), listOf(), this) // Pass listener
+        cartItemAdapter = CartItemAdapter(requireContext(), listOf(), this)
 
         val cartListView: ListView = binding.cartListView
         cartListView.adapter = cartItemAdapter
